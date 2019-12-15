@@ -1,0 +1,263 @@
+@function color($key) {
+    @if map-has-key($colors, $key) {
+      @return map-get($colors, $key);
+    }
+  
+    @warn "Unknown `#{$key}` in $colors.";
+    @return null;
+  }
+
+@mixin flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+%button {
+    width: 12%;
+    height: 40px;
+    background-color: color(button);
+    border: none;
+    color: color(text);
+    border-radius: 3px;
+    font-family: map-get($fonts, 'headers_buttons');
+    font-size: 0.9em;
+    font-weight: bold;
+    }
+
+body {
+    background-color: color(basic);
+    position: relative;
+
+header {
+    min-height: 600px;
+    background-image: $backgroundImage;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 50%/40% 0;
+
+    .header-wrap {
+        margin: 0 auto;
+        width: 80%;
+
+        .landing-logo {
+            display: flex;
+
+            img {
+                padding-top: 2%;
+            }
+
+            p {
+                color: color(names);
+                font-family: map-get($fonts, 'main');
+                text-align: center;
+                margin-bottom: 0;
+                margin-top: 2%;
+                font-weight: bold;
+                padding-left: 1%;
+
+                span {
+                    display: block;
+                    color: color(names);
+                    font-size: 0.5em;
+                    text-align: center;
+                    font-weight: bold;
+                   }
+                }
+            }
+        }
+
+        .header_heading {
+            color: color(names);
+            max-width: 40%;
+            font-size: 3.5em;
+            font-weight: bold;
+            font-family: map-get($fonts, 'headers_buttons');
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+            }
+
+        .header_heading::after {
+            display: block;
+            content: '';
+            width: 49%;
+            height: 40%;
+            background: color(underline);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            }
+
+        .header_text {
+            max-width: 40%;
+            color: color(names);
+            font-family: map-get($fonts, 'main');
+            line-height: 1.5;
+            margin-bottom: 5%;
+            font-size: 0.8em;
+            }
+
+        .header_button {
+            @extend %button;
+            }
+
+        .login {
+            color: color(text);
+            padding-left: 10%;
+            font-family: map-get($fonts, 'headers_buttons');
+            font-size: 1em;
+            }
+    }
+main {
+    margin: 0 auto;
+    width: 60%;
+
+    .section_text {
+        font-family: map-get($fonts, 'headers_buttons');
+        font-size: 2em;
+        color:  color(names);
+        text-align: center;
+        position: relative;
+        }
+
+    .section_text::after {
+        display: block;
+        content: '';
+        width: 15%;
+        height: 100%;
+        background: color(underline);
+        position: absolute;
+        bottom: 10%;
+        right: 34%;
+        z-index: -1;
+        }
+
+    .section_card_wrap {
+        margin-bottom: 20%;
+        display: flex;
+        flex-direction: column;
+        
+           .section_card {
+            display: flex;
+            background: color(main);
+            border-radius: 4px;
+            color: color(basic);
+            margin: 1%;   
+            padding: 2%;
+            
+              img.section_card_img {
+                border-radius: 7px;
+                width: 800px;
+            }
+            
+              .section_card_right_container {
+               display: flex;
+               flex-direction: column;
+               padding: 2% 0;
+            
+              .section_card_heading {
+                font-family: map-get($fonts, 'headers_buttons');
+                font-size: 1.2em;
+                color: color(text);
+                text-align: center;
+            }
+              .section_card_text {
+                font-family: map-get($fonts, 'main');
+                font-size: 0.8em;
+                color: color(text);
+                text-align: left;
+                padding: 0 15%;
+                line-height: 1.5;
+            }
+            
+              a {
+                color: color(text);
+                text-align: center;
+                font-family: map-get($fonts, 'headers_buttons');
+                font-size: 0.8em;
+                margin-top: 7%;
+            }
+          }
+        }
+    }
+    .section_banner {
+        background: linear-gradient(to right, color(button) 0%, color(gradient) 90%);
+        border-radius: 5px;
+        position: absolute;
+        width: 65%;
+        left: 17.5%;
+        bottom: 8%;
+        @include flex;
+            
+        .section_banner_heading {
+            font-family: map-get($fonts, 'headers_buttons');
+            font-size: 1.5em;
+            color: color(names);
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 5%;
+        }
+                
+        .section_banner_heading::after {
+            display: block;
+            content: '';
+            width: 16%;
+            height: 120%;
+            background: color(underline);
+            position: absolute;
+            bottom: 0;
+            left: 29%;
+            z-index: -1;
+        }
+            
+        .section_banner_text {
+            font-family: map-get($fonts, 'main');
+            color: color(text);
+            font-size: 0.7em;
+            margin-bottom: 10%;
+            margin-top: 0;
+        }
+            
+        .section_banner_button {
+            @extend %button
+        }
+    }
+}
+
+.footer-wrap {
+    background-color: color(main);
+    color: color(text);
+    @include flex;
+    height: 200px; 
+    font-family: map-get($fonts, 'main');
+
+    .footer_logo {
+        display: flex;
+        p {
+            text-align: center;
+            margin-bottom: 0;
+            margin-top: 2%;
+            font-weight: bold;
+            padding-left: 10%;
+
+            span {
+                display: block;
+                font-size: 0.5em;
+                text-align: center;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .footer_text {
+        width: 20%;
+        font-size: 0.8em;
+     }
+    .footer-cr {
+        font-size: 0.8em;
+    }
+}
+}

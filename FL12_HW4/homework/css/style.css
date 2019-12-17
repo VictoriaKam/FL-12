@@ -1,0 +1,116 @@
+.header_navigation {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    padding: 0 15%;
+}
+.header_navigation p {
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+nav a {
+    text-decoration: none;
+    color: #777;
+}
+nav a:hover {
+    color: #bfba55;
+}
+.header_main {
+    background: linear-gradient( rgba(14, 2, 2, 0.8), rgba(0, 0, 0, 0.5) ), url(../img/home-bg.jpg);
+    display: grid;
+    grid-template-rows: 2fr 0.5fr 1.5fr;
+    justify-items: center;
+    height: 90vh;
+}
+.header_heading {
+    color: white;
+    font-size: 4em;
+    font-weight: bold;
+    align-self: end;
+    margin-bottom: 0;
+}
+.header_text {
+    color: #bfba55;
+    align-self: start;
+}
+.button {
+    background-color: white;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header_main .button a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    letter-spacing: 1px;
+}
+main {
+    padding: 0 20%;
+}
+.article {
+    margin: 7% 0;
+}
+.image_main {
+    width: 100%;
+}
+.article_info {
+    display: grid;
+    grid-template-columns: 50px 90px 110px 110px;
+    align-items: center;
+    grid-gap: 0 1%;
+    color: #777; 
+}
+.image_author {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.main_text {
+    color: #777;
+    line-height: 1.5;
+}
+.section_button {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    border-color: rgba(119, 119, 119, 0.3);
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section_button a {
+    text-decoration: none;
+    color: #777;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+hr {
+    opacity: 0.3;
+}
+footer {
+    padding: 4% 20%;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10%;
+}
+footer h2 {
+    color: #FFFFFF;
+}
+footer p {
+    color: #777;
+    line-height: 1.5;
+}
